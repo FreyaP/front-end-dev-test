@@ -1,0 +1,27 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.background-bar {
+    position: relative;
+    width: 600px;
+    height: 4em;
+    background-color: #222222;
+    border-radius: 2em;
+    color: #222222;
+}
+
+.progress-bar {
+    
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0.5em;
+    top: 0.5em;
+    bottom: 0.5em;
+    width: 1%;
+    min-width: 3rem;
+    max-width: calc(100% - 1em);
+    background-color: #9FF0FF;
+    border-radius: 1.5em;
+    padding: 1em;
+}
