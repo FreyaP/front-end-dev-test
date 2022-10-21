@@ -1,9 +1,11 @@
 
 <div *ngIf="loading">
     <div class="background-bar"> 
-    <div [ngStyle]="styles" class="progress-bar" ></div>
+    <div [ngStyle]="styles" class="progress-bar">{{ time }}</div>
     </div>
 </div>
-    <div *ngIf="!loading">Loading Complete</div>
+    <div *ngIf="!loading" class="time">
+        <p>Time's Up!</p>
+    </div>
 
     

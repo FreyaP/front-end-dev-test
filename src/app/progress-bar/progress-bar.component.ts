@@ -7,13 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./progress-bar.component.scss']
 })
 export class ProgressBarComponent implements OnInit {
+  time: string = "100"
   @Input() loading: boolean = false
-  @Input() countdown: number = 1000
+  @Input() countdown: number = 100
+  styles: Record<string, string> = {};
   
   
  constructor() { }
-
-
 
   ngOnInit(): void {
     // wait for html to load before calling function
@@ -21,20 +21,19 @@ export class ProgressBarComponent implements OnInit {
       this.startCountdown();  
     }
 }
-styles: Record<string, string> = {};
 
 startCountdown() {
-  //const progressBar = document.getElementsByClassName('progress-bar')[0]
-
-  let width = 1;
+  let width = 100;
   const interval = setInterval(() => {
-  if (width >= 100) {
+  if (width <= 1) {
     clearInterval(interval);
   } else {
-    width++;
+    width--;
       this.styles = {
-        'width': width.toString() + '%'
+        'width': width.toString() + '%',
+        'opacity': width.toString() + '%',
       }
+      this.time = width.toString() + " left...!!!"
     }
 }, this.countdown / 100);
 
