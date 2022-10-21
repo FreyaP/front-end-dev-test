@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
     // loading status changes to true then back to false after random loading time
     this.loading = true;
     this.countdown = this.randomInt(4, 8) * 1000
-    console.log("loading", this.countdown);
     setTimeout(() => (this.loading = false), this.countdown);
   }
 

@@ -16,7 +16,6 @@ export class ProgressBarComponent implements OnInit {
  constructor() { }
 
   ngOnInit(): void {
-    // wait for html to load before calling function
     window.onload = () => {
       this.startCountdown();  
     }
